@@ -19,7 +19,6 @@ const HEROES: Hero[] = [
   { id: 20, name: 'Tornado' }
 ];
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,12 +27,19 @@ const HEROES: Hero[] = [
 export class AppComponent {
 
   title = 'Tour of Heroes';
-  hero: Hero = {
-    id: 1,
-    name: "Windstorm"
-  };
+  // hero: Hero = {
+  //   id: 1,
+  //   name: "Windstorm"
+  // };
+  selectedHero : Hero;
+
+
 //exposing heroes as a public property of the class
 //the type for heroes is infered from the HEROES array itself
   heroes = HEROES;
+
+  onSelect(hero: Hero): void {
+  this.selectedHero = hero;
+}
 
 }
